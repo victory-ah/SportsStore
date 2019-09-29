@@ -1,20 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
-
 
 namespace SportsStore6.Models
 {
+
     public class EFProductRepository : IProductRepository
     {
-        private ApplicationDBContext context;
+        private ApplicationDbContext context;
 
-        public EFProductRepository(ApplicationDBContext ctx)
+        public EFProductRepository(ApplicationDbContext ctx)
         {
             context = ctx;
         }
+
         public IQueryable<Product> Products => context.Products;
     }
-    
 }
